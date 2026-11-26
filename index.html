@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电脑怎么看那种小网站_电脑浏览网页技巧_安全上网方法</title>
+<meta name="description" content="视界指南官方网站，专注于电脑上网技巧与安全浏览知识分享，为企业与个人用户提供专业、高清、原创的实用教程与内容社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b4b'/%3E%3Crect x='14' y='18' width='36' height='24' rx='3' fill='none' stroke='%235eead4' stroke-width='3'/%3E%3Cpath d='M26 46h12' stroke='%235eead4' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --sj-bg:#0f1420;
+  --sj-panel:#171f30;
+  --sj-panel-2:#1e2841;
+  --sj-line:#2a3650;
+  --sj-text:#e8edf7;
+  --sj-muted:#96a3bd;
+  --sj-accent:#5eead4;
+  --sj-accent-2:#7c9cff;
+  --sj-warm:#ffc46b;
+  --sj-radius:14px;
+  --sj-shadow:0 10px 30px rgba(0,0,0,.35);
+  --sj-sticky:86px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sj-sticky)}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  background:var(--sj-bg);
+  color:var(--sj-text);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.sj-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sj-skip{position:absolute;left:-999px;top:0}
+.sj-skip:focus{left:10px;top:10px;z-index:999;background:var(--sj-accent);color:#052;padding:8px 14px;border-radius:8px}
+
+/* ===== 吸顶：公告条 + 页头 ===== */
+.sj-stickyhead{position:sticky;top:0;z-index:120}
+.sj-announce{
+  background:linear-gradient(90deg,#14324a,#1b2b4b 45%,#243a63);
+  border-bottom:1px solid var(--sj-line);
+  font-size:13px;
+}
+.sj-announce .sj-wrap{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding-top:7px;padding-bottom:7px;
+}
+.sj-announce-tag{
+  flex:0 0 auto;background:var(--sj-accent);color:#04211d;
+  font-weight:700;font-size:11px;letter-spacing:.5px;
+  padding:2px 8px;border-radius:999px;
+}
+.sj-announce-text{color:#cfe3ff;flex:1 1 320px;min-width:0}
+.sj-announce-text b{color:var(--sj-warm);font-weight:600}
+.sj-announce-link{color:var(--sj-accent);font-weight:600;white-space:nowrap;border-bottom:1px dashed rgba(94,234,212,.5)}
+.sj-announce-link:hover{color:#fff}
+
+.sj-header{
+  background:rgba(15,20,32,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--sj-line);
+}
+.sj-header .sj-wrap{display:flex;align-items:center;gap:18px;height:60px}
+.sj-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:.5px;flex:0 0 auto}
+.sj-logo-mark{
+  width:32px;height:32px;border-radius:9px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--sj-accent),var(--sj-accent-2));
+  display:grid;place-items:center;color:#0b1220;font-size:15px;font-weight:900;
+}
+.sj-logo small{display:block;font-size:10px;color:var(--sj-muted);font-weight:500;letter-spacing:2px;line-height:1}
+.sj-nav{display:flex;gap:4px;margin-left:8px;flex:1 1 auto}
+.sj-nav a{
+  padding:8px 12px;border-radius:9px;font-size:14.5px;color:var(--sj-muted);
+  transition:.2s;white-space:nowrap;
+}
+.sj-nav a:hover,.sj-nav a.is-active{color:var(--sj-text);background:var(--sj-panel-2)}
+.sj-header-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.sj-search{
+  display:flex;align-items:center;gap:6px;background:var(--sj-panel);
+  border:1px solid var(--sj-line);border-radius:999px;padding:5px 6px 5px 14px;
+  transition:.2s;
+}
+.sj-search:focus-within{border-color:var(--sj-accent)}
+.sj-search input{
+  background:none;border:none;outline:none;color:var(--sj-text);
+  font-size:13.5px;width:150px;
+}
+.sj-search input::placeholder{color:#6f7d99}
+.sj-search button{
+  background:var(--sj-accent);color:#04211d;font-weight:700;font-size:12.5px;
+  padding:4px 12px;border-radius:999px;
+}
+.sj-burger{
+  display:none;width:38px;height:38px;border-radius:10px;
+  border:1px solid var(--sj-line);background:var(--sj-panel);
+  place-items:center;
+}
+.sj-burger span{display:block;width:17px;height:2px;background:var(--sj-text);position:relative}
+.sj-burger span::before,.sj-burger span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--sj-text);
+}
+.sj-burger span::before{top:-5px}
+.sj-burger span::after{top:5px}
+
+/* 搜索结果提示 */
+.sj-search-feedback{
+  display:none;margin:0 auto;max-width:1180px;
+  padding:10px 20px;font-size:13.5px;color:var(--sj-accent);
+  background:var(--sj-panel);border-bottom:1px solid var(--sj-line);
+}
+.sj-search-feedback.is-show{display:block}
+
+/* ===== HERO ===== */
+.sj-hero{
+  padding:56px 0 48px;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(124,156,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 6% 110%,rgba(94,234,212,.12),transparent 60%);
+}
+.sj-hero-grid{
+  display:grid;grid-template-columns:6fr 4fr;gap:40px;align-items:center;
+}
+.sj-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.5px;color:var(--sj-accent);
+  border:1px solid rgba(94,234,212,.35);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;background:rgba(94,234,212,.06);
+}
+.sj-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--sj-accent);display:block}
+.sj-hero h1{
+  font-size:clamp(30px,4.2vw,50px);line-height:1.22;letter-spacing:-.5px;
+  font-weight:800;margin-bottom:20px;
+}
+.sj-hero h1 em{font-style:normal;color:var(--sj-accent)}
+.sj-hero-lead{color:var(--sj-muted);font-size:16px;max-width:560px;margin-bottom:26px}
+.sj-hero-lead b{color:var(--sj-text);font-weight:600}
+.sj-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.sj-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:14.5px;font-weight:700;
+  transition:.22s;border:1px solid transparent;
+}
+.sj-btn-primary{background:linear-gradient(135deg,var(--sj-accent),#4fd6c8);color:#04211d;box-shadow:0 8px 22px rgba(94,234,212,.22)}
+.sj-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(94,234,212,.32)}
+.sj-btn-ghost{border-color:var(--sj-line);background:var(--sj-panel);color:var(--sj-text)}
+.sj-btn-ghost:hover{border-color:var(--sj-accent);color:var(--sj-accent)}
+.sj-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:520px}
+.sj-stat{
+  background:var(--sj-panel);border:1px solid var(--sj-line);
+  border-radius:12px;padding:14px 16px;
+}
+.sj-stat-num{font-size:24px;font-weight:800;color:var(--sj-accent);line-height:1.2;letter-spacing:-.5px}
+.sj-stat-label{font-size:12.5px;color:var(--sj-muted);margin-top:2px}
+.sj-hero-visual{position:relative}
+.sj-hero-frame{
+  border-radius:20px;overflow:hidden;border:1px solid var(--sj-line);
+  box-shadow:var(--sj-shadow);background:var(--sj-panel);
+  aspect-ratio:4/3.4;
+}
+.sj-hero-frame svg{width:100%;height:100%}
+.sj-hero-badge{
+  position:absolute;left:-14px;bottom:22px;
+  background:var(--sj-panel-2);border:1px solid var(--sj-line);
+  border-radius:12px;padding:10px 16px;font-size:13px;
+  box-shadow:var(--sj-shadow);
+  display:flex;align-items:center;gap:10px;
+}
+.sj-hero-badge b{color:var(--sj-warm);font-size:16px}
+.sj-hero-badge span{color:var(--sj-muted);font-size:12px}
+
+/* ===== 通用 section ===== */
+.sj-section{padding:64px 0}
+.sj-section--alt{background:#121a29;border-top:1px solid var(--sj-line);border-bottom:1px solid var(--sj-line)}
+.sj-sec-head{margin-bottom:38px;max-width:760px}
+.sj-sec-kicker{
+  font-size:12px;letter-spacing:2.5px;color:var(--sj-accent-2);
+  font-weight:700;text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+}
+.sj-sec-kicker::after{content:"";height:1px;flex:1;background:var(--sj-line);max-width:120px}
+.sj-sec-head h2{font-size:clamp(23px,3vw,32px);line-height:1.3;font-weight:800;letter-spacing:-.3px}
+.sj-sec-head h2 em{font-style:normal;color:var(--sj-accent)}
+.sj-sec-head p{color:var(--sj-muted);margin-top:12px;font-size:15px}
+.sj-sec-head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;max-width:none;flex-wrap:wrap}
+
+/* 焦点大图 + 文字列表 */
+.sj-focus-grid{display:grid;grid-template-columns:7fr 5fr;gap:30px;align-items:start}
+.sj-focus-card{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:18px;
+  overflow:hidden;transition:.25s;
+}
+.sj-focus-card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.45);box-shadow:var(--sj-shadow)}
+.sj-focus-cover{aspect-ratio:16/9;overflow:hidden}
+.sj-focus-cover svg{width:100%;height:100%}
+.sj-focus-body{padding:22px 24px 26px}
+.sj-focus-body h3{font-size:21px;line-height:1.4;margin-bottom:10px}
+.sj-focus-body p{color:var(--sj-muted);font-size:14.5px;margin-bottom:14px}
+.sj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.sj-tag{
+  font-size:11.5px;padding:3px 10px;border-radius:999px;
+  background:rgba(124,156,255,.13);color:#a9bcff;border:1px solid rgba(124,156,255,.25);
+}
+.sj-tag--accent{background:rgba(94,234,212,.1);color:var(--sj-accent);border-color:rgba(94,234,212,.3)}
+.sj-meta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--sj-muted)}
+.sj-meta-row .sj-dot{width:3px;height:3px;border-radius:50%;background:#4a5878}
+
+.sj-list-item{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;
+  padding:16px 0;border-bottom:1px dashed var(--sj-line);
+}
+.sj-list-item:last-child{border-bottom:none}
+.sj-list-idx{
+  font-size:13px;font-weight:800;color:var(--sj-accent-2);
+  width:34px;height:34px;border-radius:9px;background:var(--sj-panel-2);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.sj-list-item h4{font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.5}
+.sj-list-item p{font-size:13px;color:var(--sj-muted);line-height:1.6}
+.sj-list-meta{font-size:12px;color:#6f7d99;margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* 视频流 */
+.sj-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.sj-video-card{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:16px;
+  overflow:hidden;display:flex;flex-direction:column;transition:.25s;
+}
+.sj-video-card:hover{transform:translateY(-3px);border-color:rgba(124,156,255,.5)}
+.sj-video-cover{aspect-ratio:16/9;position:relative;overflow:hidden}
+.sj-video-cover svg{width:100%;height:100%}
+.sj-video-play{
+  position:absolute;right:12px;bottom:12px;
+  background:rgba(4,17,29,.72);border:1px solid rgba(94,234,212,.5);
+  color:var(--sj-accent);font-size:11.5px;font-weight:700;
+  padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.sj-video-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.sj-video-body h3{font-size:16.5px;line-height:1.45;margin-bottom:8px}
+.sj-video-body p{font-size:13.5px;color:var(--sj-muted);flex:1;margin-bottom:14px}
+.sj-video-foot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--sj-muted);margin-bottom:12px}
+.sj-avatar-xs{
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  font-size:10.5px;font-weight:800;color:#0b1220;flex:0 0 auto;
+}
+.sj-actions{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--sj-line);padding-top:12px}
+.sj-act{
+  display:inline-flex;align-items:center;gap:5px;font-size:12.5px;
+  color:var(--sj-muted);padding:5px 11px;border-radius:999px;
+  border:1px solid var(--sj-line);transition:.2s;
+}
+.sj-act:hover{color:var(--sj-accent);border-color:var(--sj-accent)}
+.sj-act.is-on{color:var(--sj-accent);border-color:rgba(94,234,212,.55);background:rgba(94,234,212,.08)}
+
+/* 专题 */
+.sj-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.sj-topic{
+  background:linear-gradient(180deg,var(--sj-panel-2),var(--sj-panel));
+  border:1px solid var(--sj-line);border-radius:16px;padding:22px;
+  display:flex;flex-direction:column;
+}
+.sj-topic-status{
+  align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.5px;
+  padding:3px 10px;border-radius:999px;margin-bottom:14px;
+  background:rgba(255,196,107,.13);color:var(--sj-warm);border:1px solid rgba(255,196,107,.3);
+}
+.sj-topic-status--live{background:rgba(94,234,212,.1);color:var(--sj-accent);border-color:rgba(94,234,212,.3)}
+.sj-topic h3{font-size:17px;line-height:1.45;margin-bottom:8px}
+.sj-topic>p{font-size:13.5px;color:var(--sj-muted);margin-bottom:16px}
+.sj-topic ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.sj-topic li{font-size:13px;color:#b9c5dc;padding-left:16px;position:relative;line-height:1.55}
+.sj-topic li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:2px;background:var(--sj-accent-2)}
+
+/* 作者 */
+.sj-author-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.sj-author{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:16px;
+  padding:22px 20px;transition:.25s;display:flex;flex-direction:column;
+}
+.sj-author:hover{border-color:rgba(94,234,212,.45);transform:translateY(-3px)}
+.sj-author-avatar{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  font-size:22px;font-weight:800;color:#0b1220;margin-bottom:14px;
+}
+.sj-author h3{font-size:16px;margin-bottom:3px}
+.sj-author-role{font-size:12px;color:var(--sj-accent);margin-bottom:12px}
+.sj-author p{font-size:13px;color:var(--sj-muted);line-height:1.7;flex:1;margin-bottom:14px}
+.sj-author-nums{display:flex;gap:16px;font-size:12px;color:var(--sj-muted);border-top:1px solid var(--sj-line);padding-top:12px}
+.sj-author-nums b{display:block;color:var(--sj-text);font-size:14px}
+.sj-author-more{
+  margin-top:12px;font-size:12.5px;color:var(--sj-accent-2);align-self:flex-start;
+  border-bottom:1px dashed rgba(124,156,255,.5);
+}
+
+/* 评价 */
+.sj-comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.sj-comment{
+  background:var(--sj-panel);border:1px solid var(--sj-line);
+  border-radius:14px;padding:20px 22px;
+}
+.sj-comment-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sj-comment-name{font-size:13.5px;font-weight:700}
+.sj-comment-stars{font-size:12px;color:var(--sj-warm);letter-spacing:1px;margin-left:auto}
+.sj-comment p{font-size:13.5px;color:#c3cde0;line-height:1.75}
+.sj-comment-src{font-size:12px;color:#6f7d99;margin-top:10px}
+
+/* 关键词解析（长文） */
+.sj-analysis{max-width:860px}
+.sj-analysis h3{font-size:19px;margin:30px 0 12px;color:var(--sj-text);font-weight:800;line-height:1.4}
+.sj-analysis h3:first-child{margin-top:0}
+.sj-analysis h3 span{color:var(--sj-accent);font-size:13px;font-weight:700;margin-right:8px}
+.sj-analysis p{font-size:15px;color:#bdc8dd;margin-bottom:14px;line-height:1.9}
+.sj-analysis strong{color:var(--sj-text);font-weight:600}
+
+/* 索引 / 动态 / FAQ / 合作 */
+.sj-index-list{display:flex;flex-direction:column;gap:16px}
+.sj-index-item{
+  display:grid;grid-template-columns:180px 1fr;gap:20px;
+  background:var(--sj-panel);border:1px solid var(--sj-line);
+  border-radius:14px;overflow:hidden;transition:.22s;
+}
+.sj-index-item:hover{border-color:rgba(94,234,212,.4)}
+.sj-index-thumb{aspect-ratio:16/10;overflow:hidden}
+.sj-index-thumb svg{width:100%;height:100%}
+.sj-index-body{padding:16px 20px 16px 0}
+.sj-index-body h3{font-size:16px;margin-bottom:6px;line-height:1.5}
+.sj-index-body p{font-size:13px;color:var(--sj-muted)}
+
+.sj-update-list{display:flex;flex-direction:column;gap:0}
+.sj-update-item{
+  display:grid;grid-template-columns:110px 1fr;gap:18px;
+  padding:16px 0;border-bottom:1px dashed var(--sj-line);font-size:14px;
+}
+.sj-update-item:last-child{border-bottom:none}
+.sj-update-date{color:var(--sj-accent-2);font-size:13px;font-weight:700}
+.sj-update-item h3{font-size:15px;margin-bottom:3px}
+.sj-update-item p{font-size:13px;color:var(--sj-muted)}
+
+.sj-faq-list{display:flex;flex-direction:column;gap:12px;max-width:860px}
+.sj-faq-item{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:12px;
+  overflow:hidden;
+}
+.sj-faq-item summary{
+  list-style:none;cursor:pointer;padding:16px 20px;font-size:15px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.sj-faq-item summary::-webkit-details-marker{display:none}
+.sj-faq-item summary::after{
+  content:"+";color:var(--sj-accent);font-size:19px;font-weight:400;flex:0 0 auto;
+  transition:.2s;
+}
+.sj-faq-item[open] summary::after{content:"−"}
+.sj-faq-item[open] summary{color:var(--sj-accent)}
+.sj-faq-body{padding:0 20px 18px;font-size:14px;color:var(--sj-muted);line-height:1.8}
+
+.sj-partner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sj-partner{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:12px;
+  padding:20px;text-align:center;transition:.2s;
+}
+.sj-partner:hover{border-color:rgba(124,156,255,.5)}
+.sj-partner-mark{
+  width:42px;height:42px;border-radius:11px;margin:0 auto 10px;
+  display:grid;place-items:center;font-weight:800;font-size:15px;
+}
+.sj-partner b{display:block;font-size:14px;margin-bottom:2px}
+.sj-partner span{font-size:12px;color:var(--sj-muted)}
+
+/* 投稿 / 联系 */
+.sj-join{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;
+  background:linear-gradient(135deg,#152238,#1a2b4a);
+  border:1px solid var(--sj-line);border-radius:20px;padding:40px;
+}
+.sj-join h2{font-size:26px;line-height:1.35;margin-bottom:12px}
+.sj-join h2 em{font-style:normal;color:var(--sj-accent)}
+.sj-join p{color:var(--sj-muted);font-size:14.5px;margin-bottom:22px}
+.sj-join-actions{display:flex;gap:12px;flex-wrap:wrap}
+.sj-join-side{display:flex;flex-direction:column;gap:12px}
+.sj-join-side div{
+  background:rgba(255,255,255,.03);border:1px solid var(--sj-line);
+  border-radius:12px;padding:14px 16px;font-size:13px;color:var(--sj-muted);
+}
+.sj-join-side b{display:block;color:var(--sj-text);font-size:14.5px;margin-bottom:3px}
+
+/* 页脚 */
+.sj-footer{
+  background:#0b111c;border-top:1px solid var(--sj-line);padding:52px 0 26px;
+  font-size:13.5px;
+}
+.sj-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+.sj-footer h4{font-size:13px;color:var(--sj-text);letter-spacing:1px;margin-bottom:14px;font-weight:700}
+.sj-footer p{color:var(--sj-muted);line-height:1.85}
+.sj-footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.sj-footer li a{color:var(--sj-muted);transition:.2s}
+.sj-footer li a:hover{color:var(--sj-accent)}
+.sj-footer-bottom{
+  border-top:1px solid var(--sj-line);padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  color:#6f7d99;font-size:12.5px;
+}
+.sj-footer-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;margin-bottom:14px}
+
+/* 按钮工具 */
+.sj-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);
+  background:var(--sj-panel-2);border:1px solid rgba(94,234,212,.5);
+  color:var(--sj-text);padding:11px 22px;border-radius:999px;font-size:13.5px;
+  box-shadow:var(--sj-shadow);opacity:0;pointer-events:none;transition:.3s;z-index:300;
+}
+.sj-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.sj-totop{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--sj-panel-2);border:1px solid var(--sj-line);color:var(--sj-accent);
+  display:grid;place-items:center;font-size:18px;z-index:200;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.sj-totop.is-show{opacity:1;pointer-events:auto}
+.sj-totop:hover{border-color:var(--sj-accent)}
+
+/* 弹窗 */
+.sj-modal{
+  position:fixed;inset:0;background:rgba(5,9,16,.78);backdrop-filter:blur(4px);
+  display:none;place-items:center;z-index:400;padding:20px;
+}
+.sj-modal.is-show{display:grid}
+.sj-modal-box{
+  background:var(--sj-panel);border:1px solid var(--sj-line);border-radius:18px;
+  padding:30px;max-width:440px;width:100%;position:relative;
+  box-shadow:var(--sj-shadow);animation:sjPop .25s ease;
+}
+@keyframes sjPop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.sj-modal-box h3{font-size:19px;margin-bottom:8px}
+.sj-modal-box p{font-size:14px;color:var(--sj-muted);margin-bottom:18px}
+.sj-modal-close{
+  position:absolute;top:14px;right:16px;font-size:20px;color:var(--sj-muted);
+}
+.sj-modal-close:hover{color:var(--sj-accent)}
+.sj-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.sj-field label{font-size:12.5px;color:var(--sj-muted)}
+.sj-field input,.sj-field textarea{
+  background:var(--sj-panel-2);border:1px solid var(--sj-line);border-radius:9px;
+  padding:10px 12px;color:var(--sj-text);font-size:14px;font-family:inherit;outline:none;
+}
+.sj-field input:focus,.sj-field textarea:focus{border-color:var(--sj-accent)}
+.sj-share-row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* 响应式 */
+@media (max-width:1000px){
+  .sj-hero-grid{grid-template-columns:1fr;gap:34px}
+  .sj-focus-grid{grid-template-columns:1fr}
+  .sj-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj-author-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj-footer-grid{grid-template-columns:1fr 1fr}
+  .sj-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sj-join{grid-template-columns:1fr;padding:30px}
+}
+@media (max-width:720px){
+  .sj-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--sj-panel);border-bottom:1px solid var(--sj-line);
+    flex-direction:column;padding:10px 16px;gap:2px;
+  }
+  .sj-nav.is-open{display:flex}
+  .sj-burger{display:grid}
+  .sj-search input{width:110px}
+  .sj-video-grid,.sj-comment-grid,.sj-topic-grid{grid-template-columns:1fr}
+  .sj-author-grid{grid-template-columns:1fr}
+  .sj-index-item{grid-template-columns:1fr}
+  .sj-index-thumb{aspect-ratio:16/8}
+  .sj-index-body{padding:0 18px 18px}
+  .sj-update-item{grid-template-columns:1fr;gap:4px}
+  .sj-hero{padding:38px 0 34px}
+  .sj-stats{grid-template-columns:1fr 1fr}
+  .sj-section{padding:48px 0}
+  .sj-footer-grid{grid-template-columns:1fr;gap:24px}
+  .sj-partner-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+<a class="sj-skip" href="#sj-main">跳到主要内容</a>
+
+<!-- ===== 吸顶区：公告条 + 页头 ===== -->
+<div class="sj-stickyhead">
+  <div class="sj-announce">
+    <div class="sj-wrap">
+      <span class="sj-announce-tag">官方发布</span>
+      <div class="sj-announce-text">
+        <b>11月22日更新</b>：新增《电脑浏览器安全设置全攻略》系列 6 集，登录与标签管理专题同步上线，欢迎在社区查看更新日志。
+      </div>
+      <a class="sj-announce-link" href="#sj-updates">查看更新日志 →</a>
+    </div>
+  </div>
+  <header class="sj-header">
+    <div class="sj-wrap">
+      <a class="sj-logo" href="#sj-hero" aria-label="视界指南官方网站首页">
+        <span class="sj-logo-mark">视</span>
+        <span>视界指南<small>SHIJIE GUIDE</small></span>
+      </a>
+      <nav class="sj-nav" id="sjNav" aria-label="主导航">
+        <a href="#sj-hero" class="is-active">首页</a>
+        <a href="#sj-focus">焦点内容</a>
+        <a href="#sj-videos">视频社区</a>
+        <a href="#sj-topics">专题企划</a>
+        <a href="#sj-authors">创作者</a>
+        <a href="#sj-analysis">关键词解析</a>
+        <a href="#sj-comments">口碑评价</a>
+        <a href="#sj-faq">帮助</a>
+      </nav>
+      <div class="sj-header-tools">
+        <form class="sj-search" id="sjSearchForm" role="search" onsubmit="return false;">
+          <input type="search" id="sjSearchInput" placeholder="搜索教程 / 专题 / 创作者" aria-label="站内搜索">
+          <button type="submit" id="sjSearchBtn">搜索</button>
+        </form>
+        <button class="sj-burger" id="sjBurger" aria-label="展开导航菜单" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="sj-search-feedback" id="sjSearchFeedback" role="status" aria-live="polite"></div>
+</div>
+
+<main id="sj-main">
+
+  <!-- ===== HERO ===== -->
+  <section class="sj-hero" id="sj-hero">
+    <div class="sj-wrap">
+      <div class="sj-hero-grid">
+        <div>
+          <span class="sj-eyebrow"><i></i>电脑上网技巧 · 官方视频门户</span>
+          <h1>电脑怎么看那种小网站<em>·</em>视界指南官方网站</h1>
+          <p class="sj-hero-lead">
+            我们是一家专注<b>电脑上网技巧与安全浏览知识</b>的视频内容企业，以原创、高清、专业的教程陪伴每一位用户，
+            从浏览器设置到网络安全，用真实经验搭建值得信赖的内容生态。
+          </p>
+          <div class="sj-cta">
+            <a class="sj-btn sj-btn-primary" href="#sj-videos">▶ 进入视频社区</a>
+            <a class="sj-btn sj-btn-ghost" href="#sj-topics">浏览专题企划</a>
+            <a class="sj-btn sj-btn-ghost" href="#sj-author-join" id="sjJoinBtnHero">✦ 我要投稿</a>
+          </div>
+          <div class="sj-stats">
+            <div class="sj-stat">
+              <div class="sj-stat-num" data-count="1280">1280+</div>
+              <div class="sj-stat-label">原创教程视频</div>
+            </div>
+            <div class="sj-stat">
+              <div class="sj-stat-num" data-count="46">46万+</div>
+              <div class="sj-stat-label">社区注册用户</div>
+            </div>
+            <div class="sj-stat">
+              <div class="sj-stat-num" data-count="7">7年</div>
+              <div class="sj-stat-label">持续运营口碑</div>
+            </div>
+          </div>
+        </div>
+        <div class="sj-hero-visual">
+          <div class="sj-hero-frame">
+            <svg viewBox="0 0 640 560" role="img" aria-label="电脑浏览器窗口与网络安全知识讲解的原创主视觉插画">
+              <defs>
+                <linearGradient id="sjHeroBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1a2740"/>
+                  <stop offset="1" stop-color="#0f1b2e"/>
+                </linearGradient>
+                <linearGradient id="sjHeroAcc" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#5eead4"/>
+                  <stop offset="1" stop-color="#7c9cff"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="560" fill="url(#sjHeroBg)"/>
+              <circle cx="560" cy="80" r="130" fill="#5eead4" opacity=".07"/>
+              <circle cx="80" cy="500" r="150" fill="#7c9cff" opacity=".09"/>
+              <rect x="70" y="90" width="500" height="330" rx="16" fill="#131d2f" stroke="#2a3650" stroke-width="2"/>
+              <rect x="70" y="90" width="500" height="44" rx="16" fill="#1b2740"/>
+              <rect x="70" y="122" width="500" height="12" fill="#1b2740"/>
+              <circle cx="96" cy="112" r="6" fill="#ff6b6b"/>
+              <circle cx="118" cy="112" r="6" fill="#ffc46b"/>
+              <circle cx="140" cy="112" r="6" fill="#5eead4"/>
+              <rect x="170" y="102" width="330" height="20" rx="10" fill="#0f1a2b" stroke="#2a3650"/>
+              <rect x="185" y="109" width="120" height="6" rx="3" fill="#3b4a68"/>
+              <rect x="96" y="160" width="180" height="18" rx="9" fill="#5eead4" opacity=".85"/>
+              <rect x="96" y="192" width="280" height="10" rx="5" fill="#3b4a68"/>
+              <rect x="96" y="212" width="240" height="10" rx="5" fill="#33405c"/>
+              <rect x="96" y="248" width="150" height="110" rx="10" fill="#1c2a45" stroke="#2a3650"/>
+              <rect x="262" y="248" width="150" height="110" rx="10" fill="#1c2a45" stroke="#2a3650"/>
+              <rect x="428" y="248" width="115" height="110" rx="10" fill="#1c2a45" stroke="#2a3650"/>
+              <rect x="112" y="266" width="90" height="8" rx="4" fill="#5eead4" opacity=".7"/>
+              <rect x="112" y="284" width="118" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="112" y="300" width="100" height="7" rx="3.5" fill="#33405c"/>
+              <rect x="278" y="266" width="90" height="8" rx="4" fill="#7c9cff" opacity=".7"/>
+              <rect x="278" y="284" width="118" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="278" y="300" width="100" height="7" rx="3.5" fill="#33405c"/>
+              <rect x="444" y="266" width="80" height="8" rx="4" fill="#ffc46b" opacity=".75"/>
+              <rect x="444" y="284" width="80" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="96" y="382" width="330" height="14" rx="7" fill="#1c2a45" stroke="#2a3650"/>
+              <circle cx="470" cy="389" r="7" fill="#5eead4"/>
+              <rect x="230" y="420" width="180" height="14" rx="7" fill="#131d2f" stroke="#2a3650"/>
+              <rect x="285" y="448" width="70" height="10" rx="5" fill="#1b2740"/>
+              <path d="M520 150 l26 -20 l0 0 a 30 30 0 0 1 26 44 l-12 18" fill="none" stroke="url(#sjHeroAcc)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="540" cy="154" r="26" fill="none" stroke="#5eead4" stroke-width="2" opacity=".5"/>
+              <path d="M176 452 l14 26 l-9 0 l-16 -26 z" fill="#2a3650"/>
+              <rect x="110" y="478" width="70" height="8" rx="4" fill="#1b2740"/>
+              <rect x="110" y="494" width="46" height="8" rx="4" fill="#1b2740"/>
+            </svg>
+          </div>
+          <div class="sj-hero-badge">
+            <b>本周热播</b>
+            <span>浏览器隐私设置 · 6 集全</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 焦点与热门 ===== -->
+  <section class="sj-section sj-section--alt" id="sj-focus">
+    <div class="sj-wrap">
+      <div class="sj-sec-head sj-sec-head--row">
+        <div>
+          <div class="sj-sec-kicker">Focus / 焦点内容</div>
+          <h2>电脑上网技巧<em>焦点推荐</em></h2>
+          <p>由视界指南官方编辑团队精选，围绕“电脑怎么看那种小网站”这一常见疑问，讲清楚浏览器访问、标签管理与安全防护的完整链路。</p>
+        </div>
+        <a class="sj-btn sj-btn-ghost" href="#sj-videos">全部视频 →</a>
+      </div>
+
+      <div class="sj-focus-grid">
+        <article class="sj-focus-card">
+          <div class="sj-focus-cover">
+            <svg viewBox="0 0 800 450" role="img" aria-label="浏览器地址栏输入网址与安全检测流程图解封面">
+              <defs>
+                <linearGradient id="sjFocusA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#20304e"/>
+                  <stop offset="1" stop-color="#12203a"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#sjFocusA)"/>
+              <circle cx="700" cy="60" r="120" fill="#5eead4" opacity=".08"/>
+              <rect x="80" y="70" width="640" height="70" rx="12" fill="#0f1a2b" stroke="#2a3650" stroke-width="2"/>
+              <circle cx="112" cy="105" r="7" fill="#ff6b6b"/>
+              <circle cx="136" cy="105" r="7" fill="#ffc46b"/>
+              <circle cx="160" cy="105" r="7" fill="#5eead4"/>
+              <rect x="196" y="92" width="480" height="26" rx="13" fill="#16223a" stroke="#3b4a68"/>
+              <rect x="214" y="101" width="200" height="8" rx="4" fill="#5eead4" opacity=".8"/>
+              <path d="M690 92 l0 0" stroke="#5eead4"/>
+              <rect x="80" y="180" width="300" height="190" rx="14" fill="#16223a" stroke="#2a3650"/>
+              <rect x="102" y="202" width="130" height="14" rx="7" fill="#7c9cff" opacity=".8"/>
+              <rect x="102" y="230" width="250" height="9" rx="4.5" fill="#3b4a68"/>
+              <rect x="102" y="250" width="220" height="9" rx="4.5" fill="#33405c"/>
+              <rect x="102" y="286" width="180" height="42" rx="9" fill="#1c2c4a" stroke="#3b4a68"/>
+              <rect x="120" y="303" width="100" height="8" rx="4" fill="#5eead4" opacity=".7"/>
+              <rect x="410" y="180" width="310" height="190" rx="14" fill="#16223a" stroke="#2a3650"/>
+              <circle cx="470" cy="240" r="30" fill="none" stroke="#5eead4" stroke-width="3"/>
+              <path d="M458 240 l9 10 l16 -19" fill="none" stroke="#5eead4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="516" y="216" width="150" height="12" rx="6" fill="#e8edf7" opacity=".8"/>
+              <rect x="516" y="240" width="110" height="9" rx="4.5" fill="#3b4a68"/>
+              <rect x="450" y="296" width="240" height="9" rx="4.5" fill="#33405c"/>
+              <rect x="450" y="316" width="190" height="9" rx="4.5" fill="#33405c"/>
+              <rect x="450" y="336" width="140" height="9" rx="4.5" fill="#33405c"/>
+              <rect x="80" y="400" width="640" height="2" fill="#2a3650"/>
+            </svg>
+          </div>
+          <div class="sj-focus-body">
+            <div class="sj-tags">
+              <span class="sj-tag sj-tag--accent">官方发布</span>
+              <span class="sj-tag">安全浏览</span>
+              <span class="sj-tag">新手必看</span>
+            </div>
+            <h3>电脑怎么看那种小网站：一次讲清浏览器访问的完整流程</h3>
+            <p>从地址栏输入、DNS 解析到页面渲染，用通俗的语言拆解每一步在做什么；同时讲解如何识别站点真实身份、如何管理标签页与书签，把“会不会看”变成“看得明白、看得安全”。</p>
+            <div class="sj-meta-row">
+              <span>视界指南官方</span><span class="sj-dot"></span>
+              <span>播放 38.6万</span><span class="sj-dot"></span>
+              <span>点赞 2.4万</span><span class="sj-dot"></span>
+              <span>11月21日</span>
+            </div>
+          </div>
+        </article>
+
+        <div>
+          <div class="sj-list-item">
+            <div class="sj-list-idx">01</div>
+            <div>
+              <h4>地址栏里的细节：怎么看懂一个网址</h4>
+              <p>协议、域名、路径三段式拆解，教你在电脑上快速判断链接是否可信。</p>
+              <div class="sj-list-meta"><span>播放 12.8万</span><span>收藏 8402</span><span>作者：林舟</span></div>
+            </div>
+          </div>
+          <div class="sj-list-item">
+            <div class="sj-list-idx">02</div>
+            <div>
+              <h4>标签页总会开一堆？三个整理习惯让电脑更清爽</h4>
+              <p>分组、固定、待读清单，一套适合上班族的浏览器标签管理方法。</p>
+              <div class="sj-list-meta"><span>播放 9.6万</span><span>收藏 6120</span><span>作者：苏禾</span></div>
+            </div>
+          </div>
+          <div class="sj-list-item">
+            <div class="sj-list-idx">03</div>
+            <div>
+              <h4>电脑端隐私设置清单：10 分钟完成基础加固</h4>
+              <p>从追踪保护、Cookie 管理到扩展审核，逐项演示可操作的设置路径。</p>
+              <div class="sj-list-meta"><span>播放 15.2万</span><span>收藏 1.1万</span><span>作者：陈默</span></div>
+            </div>
+          </div>
+          <div class="sj-list-item">
+            <div class="sj-list-idx">04</div>
+            <div>
+              <h4>为什么有的网站加载慢？用开发者工具看真相</h4>
+              <p>教你打开网络面板，查看请求耗时与体积，判断是网站问题还是本机问题。</p>
+              <div class="sj-list-meta"><span>播放 7.4万</span><span>收藏 5038</span><span>作者：赵野</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 视频社区 ===== -->
+  <section class="sj-section" id="sj-videos">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Community / 热门视频</div>
+        <h2>持续更新的<em>电脑上网教程</em>视频社区</h2>
+        <p>视界指南官方网站以内容生态为核心，所有视频均为平台原创与正版授权，覆盖从入门到进阶的完整知识路线。</p>
+      </div>
+
+      <div class="sj-video-grid" id="sjVideoGrid">
+        <article class="sj-video-card" data-search="电脑怎么浏览网页 浏览器基础操作">
+          <div class="sj-video-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="浏览器基础操作按钮与鼠标指针示意封面">
+              <rect width="640" height="360" fill="#152238"/>
+              <circle cx="560" cy="70" r="100" fill="#7c9cff" opacity=".1"/>
+              <rect x="60" y="70" width="380" height="220" rx="12" fill="#1b2740" stroke="#2a3650" stroke-width="2"/>
+              <rect x="60" y="70" width="380" height="34" rx="12" fill="#22304d"/>
+              <circle cx="82" cy="87" r="5" fill="#ff6b6b"/><circle cx="100" cy="87" r="5" fill="#ffc46b"/><circle cx="118" cy="87" r="5" fill="#5eead4"/>
+              <rect x="150" y="78" width="230" height="18" rx="9" fill="#0f1a2b" stroke="#3b4a68"/>
+              <rect x="86" y="128" width="140" height="12" rx="6" fill="#5eead4" opacity=".75"/>
+              <rect x="86" y="154" width="250" height="8" rx="4" fill="#3b4a68"/>
+              <rect x="86" y="174" width="210" height="8" rx="4" fill="#33405c"/>
+              <rect x="86" y="206" width="120" height="36" rx="8" fill="#7c9cff" opacity=".85"/>
+              <path d="M470 190 l0 60 l16 -14 l12 26 l14 -7 l-12 -25 l22 -2 z" fill="#5eead4" stroke="#0f1a2b" stroke-width="2"/>
+              <rect x="470" y="120" width="110" height="8" rx="4" fill="#3b4a68"/>
+              <rect x="470" y="140" width="80" height="8" rx="4" fill="#33405c"/>
+            </svg>
+            <span class="sj-video-play">▶ 12:04</span>
+          </div>
+          <div class="sj-video-body">
+            <div class="sj-tags">
+              <span class="sj-tag sj-tag--accent">基础入门</span>
+              <span class="sj-tag">浏览器</span>
+            </div>
+            <h3>第一次用电脑上网：从打开浏览器开始</h3>
+            <p>打开、输入、前进后退、刷新，把最常用的六个动作讲透，适合刚开始接触电脑的朋友。</p>
+            <div class="sj-video-foot">
+              <span class="sj-avatar-xs" style="background:#5eead4;">林</span>
+              <span>林舟</span><span>·</span>
+              <span>播放 16.3万</span><span>·</span><span>点赞 9,820</span>
+            </div>
+            <div class="sj-actions">
+              <button class="sj-act sj-like" data-count="9820">♡ 点赞 <b>9820</b></button>
+              <button class="sj-act sj-fav">☆ 收藏</button>
+              <button class="sj-act sj-copy" data-title="第一次用电脑上网：从打开浏览器开始">⧉ 复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="sj-video-card" data-search="网址识别 判断网站可信">
+          <div class="sj-video-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="网址结构拆解与可信度判断示意图封面">
+              <rect width="640" height="360" fill="#1a2438"/>
+              <circle cx="80" cy="300" r="120" fill="#5eead4" opacity=".07"/>
+              <rect x="50" y="60" width="540" height="240" rx="14" fill="#182640" stroke="#2a3650"/>
+              <rect x="80" y="92" width="480" height="42" rx="10" fill="#0f1a2b" stroke="#3b4a68"/>
+              <rect x="98" y="106" width="90" height="14" rx="7" fill="#ffc46b"/>
+              <rect x="196" y="106" width="170" height="14" rx="7" fill="#5eead4"/>
+              <rect x="374" y="106" width="160" height="14" rx="7" fill="#7c9cff"/>
+              <path d="M140 158 l0 30" stroke="#ffc46b" stroke-width="2" stroke-dasharray="4 3"/>
+              <path d="M280 158 l0 30" stroke="#5eead4" stroke-width="2" stroke-dasharray="4 3"/>
+              <path d="M454 158 l0 30" stroke="#7c9cff" stroke-width="2" stroke-dasharray="4 3"/>
+              <text x="112" y="208" fill="#ffc46b" font-size="15" font-family="sans-serif">协议</text>
+              <text x="244" y="208" fill="#5eead4" font-size="15" font-family="sans-serif">域名</text>
+              <text x="424" y="208" fill="#7c9cff" font-size="15" font-family="sans-serif">路径</text>
+              <rect x="80" y="232" width="480" height="8" rx="4" fill="#33405c"/>
+              <rect x="80" y="252" width="360" height="8" rx="4" fill="#2a3650"/>
+            </svg>
+            <span class="sj-video-play">▶ 09:38</span>
+          </div>
+          <div class="sj-video-body">
+            <div class="sj-tags">
+              <span class="sj-tag">实用技巧</span>
+              <span class="sj-tag">安全</span>
+            </div>
+            <h3>看网址识安全：三分钟学会判断链接是否可信</h3>
+            <p>把长得像的域名、跳转链接、短链还原都讲清楚，避免误入仿冒页面。</p>
+            <div class="sj-video-foot">
+              <span class="sj-avatar-xs" style="background:#7c9cff;">苏</span>
+              <span>苏禾</span><span>·</span>
+              <span>播放 13.7万</span><span>·</span><span>点赞 8,240</span>
+            </div>
+            <div class="sj-actions">
+              <button class="sj-act sj-like" data-count="8240">♡ 点赞 <b>8240</b></button>
+              <button class="sj-act sj-fav">☆ 收藏</button>
+              <button class="sj-act sj-copy" data-title="看网址识安全：三分钟学会判断链接是否可信">⧉ 复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="sj-video-card" data-search="隐私设置 浏览器加固">
+          <div class="sj-video-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="盾牌与隐私设置开关的图示封面">
+              <rect width="640" height="360" fill="#13283a"/>
+              <circle cx="320" cy="180" r="150" fill="#5eead4" opacity=".06"/>
+              <path d="M250 100 l70 -26 l70 26 v78 c0 52 -34 82 -70 96 c-36 -14 -70 -44 -70 -96 z" fill="#1c3a4d" stroke="#5eead4" stroke-width="3"/>
+              <path d="M284 176 l26 28 l48 -56" fill="none" stroke="#5eead4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="430" y="120" width="150" height="120" rx="12" fill="#1b2740" stroke="#2a3650"/>
+              <rect x="450" y="142" width="90" height="10" rx="5" fill="#3b4a68"/>
+              <rect x="450" y="164" width="110" height="10" rx="5" fill="#33405c"/>
+              <rect x="450" y="190" width="46" height="22" rx="11" fill="#5eead4"/>
+              <circle cx="482" cy="201" r="8" fill="#0f1a2b"/>
+              <rect x="60" y="210" width="140" height="10" rx="5" fill="#2a3650"/>
+              <rect x="60" y="232" width="110" height="10" rx="5" fill="#2a3650"/>
+            </svg>
+            <span class="sj-video-play">▶ 14:20</span>
+          </div>
+          <div class="sj-video-body">
+            <div class="sj-tags">
+              <span class="sj-tag">深度测评</span>
+              <span class="sj-tag">隐私</span>
+            </div>
+            <h3>电脑浏览器隐私加固：十项设置逐条演示</h3>
+            <p>追踪保护、第三方 Cookie、扩展权限、自动填充，按顺序演示并解释每项的作用。</p>
+            <div class="sj-video-foot">
+              <span class="sj-avatar-xs" style="background:#ffc46b;">陈</span>
+              <span>陈默</span><span>·</span>
+              <span>播放 11.2万</span><span>·</span><span>点赞 6,930</span>
+            </div>
+            <div class="sj-actions">
+              <button class="sj-act sj-like" data-count="6930">♡ 点赞 <b>6930</b></button>
+              <button class="sj-act sj-fav">☆ 收藏</button>
+              <button class="sj-act sj-copy" data-title="电脑浏览器隐私加固：十项设置逐条演示">⧉ 复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="sj-video-card" data-search="加载慢 网络面板 排查">
+          <div class="sj-video-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="网络请求耗时柱状图与开发者工具面板封面">
+              <rect width="640" height="360" fill="#1d2233"/>
+              <rect x="60" y="50" width="520" height="260" rx="12" fill="#151b2c" stroke="#2a3650"/>
+              <rect x="60" y="50" width="520" height="34" rx="12" fill="#232c44"/>
+              <circle cx="82" cy="67" r="5" fill="#ff6b6b"/><circle cx="100" cy="67" r="5" fill="#ffc46b"/><circle cx="118" cy="67" r="5" fill="#5eead4"/>
+              <rect x="90" y="110" width="120" height="160" fill="none" stroke="#2a3650"/>
+              <rect x="106" y="196" width="34" height="74" fill="#7c9cff"/>
+              <rect x="150" y="160" width="34" height="110" fill="#5eead4"/>
+              <rect x="236" y="110" width="300" height="12" rx="6" fill="#3b4a68"/>
+              <rect x="236" y="136" width="240" height="12" rx="6" fill="#33405c"/>
+              <rect x="236" y="162" width="280" height="12" rx="6" fill="#3b4a68"/>
+              <rect x="236" y="200" width="180" height="8" rx="4" fill="#5eead4" opacity=".7"/>
+              <rect x="236" y="220" width="200" height="8" rx="4" fill="#3b4a68"/>
+              <rect x="236" y="240" width="150" height="8" rx="4" fill="#3b4a68"/>
+            </svg>
+            <span class="sj-video-play">▶ 18:52</span>
+          </div>
+          <div class="sj-video-body">
+            <div class="sj-tags">
+              <span class="sj-tag">教程干货</span>
+              <span class="sj-tag">排查</span>
+            </div>
+            <h3>网站打不开或很慢？用开发者工具定位原因</h3>
+            <p>不止是网络问题，从 DNS、请求体量到扩展干扰，用一套流程快速自查。</p>
+            <div class="sj-video-foot">
+              <span class="sj-avatar-xs" style="background:#9be38a;">赵</span>
+              <span>赵野</span><span>·</span>
+              <span>播放 9.1万</span><span>·</span><span>点赞 5,410</span>
+            </div>
+            <div class="sj-actions">
+              <button class="sj-act sj-like" data-count="5410">♡ 点赞 <b>5410</b></button>
+              <button class="sj-act sj-fav">☆ 收藏</button>
+              <button class="sj-act sj-copy" data-title="网站打不开或很慢？用开发者工具定位原因">⧉ 复制链接</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="sj-index-list" style="margin-top:26px">
+        <article class="sj-index-item" data-search="书签整理 常用网站">
+          <div class="sj-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="书签栏整理与常用网站收藏示意缩略图">
+              <rect width="320" height="200" fill="#16223a"/>
+              <rect x="24" y="26" width="272" height="30" rx="8" fill="#1f2c47" stroke="#2a3650"/>
+              <rect x="38" y="37" width="60" height="8" rx="4" fill="#5eead4"/>
+              <rect x="108" y="37" width="52" height="8" rx="4" fill="#3b4a68"/>
+              <rect x="170" y="37" width="70" height="8" rx="4" fill="#3b4a68"/>
+              <rect x="24" y="72" width="128" height="100" rx="10" fill="#1b2740" stroke="#2a3650"/>
+              <rect x="168" y="72" width="128" height="100" rx="10" fill="#1b2740" stroke="#2a3650"/>
+              <rect x="40" y="88" width="70" height="9" rx="4.5" fill="#7c9cff"/>
+              <rect x="40" y="106" width="94" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="40" y="122" width="80" height="7" rx="3.5" fill="#33405c"/>
+              <rect x="184" y="88" width="70" height="9" rx="4.5" fill="#ffc46b"/>
+              <rect x="184" y="106" width="94" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="184" y="122" width="80" height="7" rx="3.5" fill="#33405c"/>
+            </svg>
+          </div>
+          <div class="sj-index-body">
+            <h3>把常用网站收进书签：一套不会越用越乱的方法</h3>
+            <p>文件夹分层、命名规范、定期清理，三个习惯让浏览器首页真正成为效率入口。</p>
+          </div>
+        </article>
+        <article class="sj-index-item" data-search="多标签 分组 工作流">
+          <div class="sj-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="浏览器多标签分组与颜色标记示意缩略图">
+              <rect width="320" height="200" fill="#1a2438"/>
+              <rect x="24" y="30" width="90" height="24" rx="7" fill="#5eead4" opacity=".85"/>
+              <rect x="120" y="30" width="90" height="24" rx="7" fill="#2a3650"/>
+              <rect x="216" y="30" width="80" height="24" rx="7" fill="#2a3650"/>
+              <rect x="24" y="70" width="272" height="106" rx="10" fill="#16223a" stroke="#2a3650"/>
+              <rect x="44" y="90" width="110" height="10" rx="5" fill="#7c9cff"/>
+              <rect x="44" y="110" width="200" height="7" rx="3.5" fill="#3b4a68"/>
+              <rect x="44" y="126" width="160" height="7" rx="3.5" fill="#33405c"/>
+              <rect x="44" y="146" width="80" height="16" rx="8" fill="#5eead4" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="sj-index-body">
+            <h3>标签页分组实战：把工作与娱乐彻底分开</h3>
+            <p>结合收藏夹与快捷键，演示如何在一台电脑上同时管理多个上网场景。</p>
+          </div>
+        </article>
+        <article class="sj-index-item" data-search="扩展插件 安全审核">
+          <div class="sj-index-thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="浏览器扩展管理界面与权限审核示意缩略图">
+              <rect width="320" height="200" fill="#152238"/>
+              <rect x="24" y="24" width="272" height="40" rx="10" fill="#1f2c47" stroke="#2a3650"/>
+              <circle cx="52" cy="44" r="12" fill="#5eead4" opacity=".8"/>
+              <rect x="76" y="38" width="90" height="10" rx="5" fill="#3b4a68"/>
+              <rect x="220" y="36" width="52" height="16" rx="8" fill="#7c9cff" opacity=".8"/>
+              <rect x="24" y="80" width="272" height="40" rx="10" fill="#1f2c47" stroke="#2a3650"/>
+              <circle cx="52" cy="100" r="12" fill="#ffc46b" opacity=".8"/>
+              <rect x="76" y="94" width="110" height="10" rx="5" fill="#3b4a68"/>
+              <rect x="220" y="92" width="52" height="16" rx="8" fill="#2a3650"/>
+              <rect x="24" y="136" width="272" height="40" rx="10" fill="#1f2c47" stroke="#2a3650"/>
+              <circle cx="52" cy="156" r="12" fill="#7c9cff" opacity=".8"/>
+              <rect x="76" y="150" width="80" height="10" rx="5" fill="#3b4a68"/>
+              <rect x="220" y="148" width="52" height="16" rx="8" fill="#2a3650"/>
+            </svg>
+          </div>
+          <div class="sj-index-body">
+            <h3>插件只装需要的：三步审核扩展权限</h3>
+            <p>很多上网问题来自来路不明的扩展，本集教你查看权限、识别风险、按需卸载。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 专题企划 ===== -->
+  <section class="sj-section sj-section--alt" id="sj-topics">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Series / 专题企划</div>
+        <h2>围绕<em>安全上网</em>的系列企划</h2>
+        <p>专题由平台编辑与社区创作者共同策划，每一期都保持原创与真实，持续陪伴用户成长。</p>
+      </div>
+      <div class="sj-topic-grid">
+        <article class="sj-topic">
+          <span class="sj-topic-status sj-topic-status--live">更新中 · 6 集</span>
+          <h3>电脑浏览器安全设置全攻略</h3>
+          <p>从零开始，把浏览器的隐私、安全、下载三块设置完整走一遍，适合所有电脑用户。</p>
+          <ul>
+            <li>第 1 集：隐私与安全面板逐项解读</li>
+            <li>第 2 集：下载文件的风险识别</li>
+            <li>第 3 集：账号登录与密码管理</li>
+          </ul>
+        </article>
+        <article class="sj-topic">
+          <span class="sj-topic-status">已完结 · 4 集</span>
+          <h3>网址怎么看：从地址栏读懂一个网站</h3>
+          <p>面向新手的网址科普企划，用生活中的类比讲清协议、域名与跳转的关系。</p>
+          <ul>
+            <li>第 1 集：网址的三段式结构</li>
+            <li>第 2 集：仿冒链接的常见套路</li>
+            <li>第 3 集：短链接还原与二次确认</li>
+          </ul>
+        </article>
+        <article class="sj-topic">
+          <span class="sj-topic-status sj-topic-status--live">更新中 · 3 集</span>
+          <h3>一台电脑的高效上网工作流</h3>
+          <p>把浏览器变成效率工具：标签分组、书签体系、快捷键与阅读清单的组合用法。</p>
+          <ul>
+            <li>第 1 集：标签页分组的三种方式</li>
+            <li>第 2 集：书签命名与归档规范</li>
+            <li>第 3 集：跨设备同步的注意事项</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作者矩阵 ===== -->
+  <section class="sj-section" id="sj-authors">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Creators / 创作者矩阵</div>
+        <h2>与<em>品牌共同成长</em>的创作者</h2>
+        <p>他们来自不同背景，有程序员、教师、设计师与普通上班族，用各自的视角记录电脑上网经验。</p>
+      </div>
+      <div class="sj-author-grid">
+        <article class="sj-author">
+          <div class="sj-author-avatar" style="background:#5eead4;">林</div>
+          <h3>林舟</h3>
+          <div class="sj-author-role">浏览器基础 · 入门教学</div>
+          <p>从事过五年学校机房维护，擅长把复杂的操作拆成一步一步，讲给完全没有基础的人听。信奉“能看懂才算学会”，视频节奏偏慢但信息密度高。</p>
+          <div class="sj-author-nums">
+            <span><b>186</b>作品</span>
+            <span><b>12.4万</b>粉丝</span>
+          </div>
+          <button class="sj-author-more sj-author-modal" data-author="林舟">查看简介</button>
+        </article>
+        <article class="sj-author">
+          <div class="sj-author-avatar" style="background:#7c9cff;">苏</div>
+          <h3>苏禾</h3>
+          <div class="sj-author-role">网络安全 · 实用技巧</div>
+          <p>前企业信息安全顾问，习惯用真实案例讲安全。她认为安全不是恐吓式提醒，而是一套可执行的日常习惯。作品以清单和演示见长，口碑稳定。</p>
+          <div class="sj-author-nums">
+            <span><b>142</b>作品</span>
+            <span><b>9.8万</b>粉丝</span>
+          </div>
+          <button class="sj-author-more sj-author-modal" data-author="苏禾">查看简介</button>
+        </article>
+        <article class="sj-author">
+          <div class="sj-author-avatar" style="background:#ffc46b;">陈</div>
+          <h3>陈默</h3>
+          <div class="sj-author-role">隐私设置 · 深度测评</div>
+          <p>独立测评人，喜欢把不同浏览器、不同插件放在同一标准下对比。每期视频都给出可复现的测试步骤，强调结论有依据，不做过度承诺。</p>
+          <div class="sj-author-nums">
+            <span><b>98</b>作品</span>
+            <span><b>7.6万</b>粉丝</span>
+          </div>
+          <button class="sj-author-more sj-author-modal" data-author="陈默">查看简介</button>
+        </article>
+        <article class="sj-author">
+          <div class="sj-author-avatar" style="background:#9be38a;">赵</div>
+          <h3>赵野</h3>
+          <div class="sj-author-role">开发工具 · 问题排查</div>
+          <p>后端工程师出身，擅长用开发者工具定位真实问题。他喜欢在视频里现场复现故障，再一步步排查，让观众学会自己动手解决。</p>
+          <div class="sj-author-nums">
+            <span><b>76</b>作品</span>
+            <span><b>5.2万</b>粉丝</span>
+          </div>
+          <button class="sj-author-more sj-author-modal" data-author="赵野">查看简介</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关键词解析 ===== -->
+  <section class="sj-section sj-section--alt" id="sj-analysis">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Insight / 关键词解析</div>
+        <h2>电脑怎么看那种小网站：<em>一次系统梳理</em></h2>
+        <p>作为一家深耕电脑上网知识领域的内容企业，我们把这个问题拆成访问、识别与安全三个层面来讲。</p>
+      </div>
+      <div class="sj-analysis">
+        <h3><span>01</span>“看”的第一步：电脑是怎么打开一个网页的</h3>
+        <p>很多用户在电脑上打开浏览器的第一件事，就是在地址栏里输入一串内容，然后按下回车。看似只有一个动作，背后其实经历了几层流程：浏览器先判断你输入的是搜索词还是网址，如果带明确的协议和域名，就按网址处理；接着向域名系统查询这个域名对应的地址，再建立连接、请求页面、下载资源、渲染排版。视界指南官方网站把这一整套流程做成了一集十分钟的科普视频，目的不是让每个人都成为工程师，而是让大家知道<strong>每一步都可能出现问题，也都有对应的解决方法</strong>。</p>
+        <p>理解流程之后，“电脑怎么看那种小网站”这个问题就变得具体了：你输入的内容是否被正确识别、域名是否解析成功、连接是否被拦截、页面资源是否加载完整。这四步任何一步卡住，页面就会白屏、转圈或者报错。我们建议遇到问题时先别急着重装系统，按顺序检查地址栏、网络状态和浏览器提示，往往就能定位大半原因。这也是我们做内容时一直坚持的原则：先讲清原理，再给可执行的动作。</p>
+
+        <h3><span>02</span>“那种小网站”到底指什么：常见类型与访问方式</h3>
+        <p>在日常语境里，“那种小网站”通常并不是一个严谨的技术词，而是用户对各类小型站点、工具站、个人主页、内容分享页的统称。它们可能是一个人的作品集，也可能是某个兴趣小组的资料页，还可能是一个临时搭建的活动页。这类网站的共同点是规模不大、更新不规律，但对特定人群有实际价值。作为电脑上网知识平台，我们的态度很明确：<strong>所有访问都应建立在合法、合规、安全的前提下</strong>，不提供任何绕过监管或规避安全机制的方法。</p>
+        <p>从技术角度讲，访问这类站点的步骤和访问大型网站没有区别，仍然是输入、解析、请求与渲染。真正需要注意的是来源判断：一个站点是否有明确的主体信息、是否使用安全的连接方式、下载的文件是否来源可查、页面是否要求输入不必要的账号密码。在我们的专题企划《网址怎么看》中，苏禾用三集内容讲清了这三件事，社区里不少用户反馈说，看完之后至少能判断出哪些链接不该点。这就是内容生态的价值——不制造焦虑，只提供判断依据。</p>
+
+        <h3><span>03</span>安全与合规：电脑上网的底层习惯</h3>
+        <p>讨论电脑上网，绕不开安全。我们的建议可以归纳成四条日常习惯：第一，保持浏览器和系统更新，很多漏洞在更新后就被修复；第二，来源不明的安装包和文件先查证再打开，必要时用在线检测服务扫描；第三，账号密码分级管理，重要账号单独使用高强度密码；第四，对“免费”“破解”“内部资源”这类诱导性话术保持警惕。这四条看起来朴素，但覆盖了绝大多数真实发生的风险场景。</p>
+        <p>同时我们也想强调合规的重要性。网络空间有明确的法律法规，访问和使用网络资源应当在法律允许的范围内进行。视界指南官方网站作为持续运营的内容企业，始终把社会责任放在重要位置：我们的视频不教任何规避手段，只教正当、安全、合法的使用方法。这种克制可能让内容看起来不够“刺激”，但正是这种克制，让平台在七年里积累了值得信赖的口碑。我们相信，用户至上的真正含义，是让用户在学会技能的同时，不必承担额外风险。</p>
+
+        <h3><span>04</span>从会用到用好：把浏览器变成工具</h3>
+        <p>当访问与安全问题被解决之后，还有一个更值得投入的方向：把浏览器变成真正的工作工具。我们在《一台电脑的高效上网工作流》专题里，把这件事拆成标签分组、书签体系、快捷键和阅读清单四块。标签分组解决“开太多乱成一团”的问题，书签体系解决“找不回来”的问题，快捷键解决“慢”的问题，阅读清单解决“现在没空看”的问题。四块组合起来，一台普通电脑的上网体验会有明显提升。</p>
+        <p>这也是我们对“电脑怎么看那种小网站”这个问题的完整回答：它既是一个操作问题，也是一个判断问题，更是一个习惯问题。操作层面，你只需要知道地址栏、标签页、书签和开发者工具在哪里；判断层面，你需要学会看网址、看来源、看权限；习惯层面，你需要建立更新、验证、分级和警惕的日常动作。三层都做到，才算是真正会看。我们会继续以原创、高清、专业的内容，把这些知识讲给更多人听，也欢迎社区创作者一起参与、一起成长。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 用户评价 ===== -->
+  <section class="sj-section" id="sj-comments">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Voice / 社区口碑</div>
+        <h2>来自<em>真实用户</em>的评价与反馈</h2>
+        <p>这些评价来自社区注册用户，涵盖学习体验、内容质量与服务响应等不同维度。</p>
+      </div>
+      <div class="sj-comment-grid">
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#5eead4;">周</span>
+            <span class="sj-comment-name">周行舟</span>
+            <span class="sj-comment-stars">★★★★★</span>
+          </div>
+          <p>从完全不懂到能自己排查浏览器打不开的问题，大概花了两周。林舟老师的第一集我反复看了三遍，讲得很慢但每一步都有解释，对新手特别友好。</p>
+          <div class="sj-comment-src">评价课程《第一次用电脑上网》</div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#7c9cff;">李</span>
+            <span class="sj-comment-name">李思远</span>
+            <span class="sj-comment-stars">★★★★☆</span>
+          </div>
+          <p>内容质量整体很高，尤其喜欢苏禾的安全系列，案例都是真实的。唯一小建议是希望能多出一些企业办公场景的实操，比如公司电脑的权限设置。</p>
+          <div class="sj-comment-src">评价专题《浏览器安全设置全攻略》</div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#ffc46b;">吴</span>
+            <span class="sj-comment-name">吴悦</span>
+            <span class="sj-comment-stars">★★★★★</span>
+          </div>
+          <p>关键词解析那篇文章是真的长知识，我第一次知道地址栏里的内容还分协议、域名、路径。看完之后点链接前会多看一眼，这个习惯值回票价。</p>
+          <div class="sj-comment-src">评价长文《电脑怎么看那种小网站》</div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#9be38a;">郑</span>
+            <span class="sj-comment-name">郑一鸣</span>
+            <span class="sj-comment-stars">★★★★★</span>
+          </div>
+          <p>作为程序员，本来以为这类内容会很浅，结果陈默的测评做得挺扎实，测试步骤都写清楚了，结论也有边界意识，没有夸大。这一点在现在的视频里挺难得。</p>
+          <div class="sj-comment-src">评价栏目《深度测评》</div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#ff9e9e;">孙</span>
+            <span class="sj-comment-name">孙晓棠</span>
+            <span class="sj-comment-stars">★★★★☆</span>
+          </div>
+          <p>客服回复挺快的，我在投稿入口提交了一个标签管理的选题，三天后收到编辑回复说已经排进企划，这种被认真对待的感觉很好。</p>
+          <div class="sj-comment-src">评价投稿与反馈服务</div>
+        </article>
+        <article class="sj-comment">
+          <div class="sj-comment-top">
+            <span class="sj-avatar-xs" style="background:#c9a7ff;">何</span>
+            <span class="sj-comment-name">何嘉树</span>
+            <span class="sj-comment-stars">★★★★★</span>
+          </div>
+          <p>我最喜欢的是视频下方的文字摘要，上班的时候不方便看视频，扫一眼摘要就知道重点。希望以后每一期都保留这个形式，很实用。</p>
+          <div class="sj-comment-src">评价视频社区功能</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 企业动态 + 合作 ===== -->
+  <section class="sj-section sj-section--alt" id="sj-updates">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">News / 企业动态</div>
+        <h2>官方发布与<em>内容更新日志</em></h2>
+        <p>视界指南官方网站定期同步企业动态与内容更新，让社区用户第一时间了解平台进展。</p>
+      </div>
+      <div class="sj-update-list">
+        <div class="sj-update-item">
+          <div class="sj-update-date">2026-11-22</div>
+          <div>
+            <h3>《浏览器安全设置全攻略》更新第 6 集</h3>
+            <p>本期讲解下载文件的风险识别与在线检测工具的使用，配套文字笔记已同步发布。</p>
+          </div>
+        </div>
+        <div class="sj-update-item">
+          <div class="sj-update-date">2026-11-15</div>
+          <div>
+            <h3>社区投稿通道升级，支持选题投票</h3>
+            <p>投稿入口新增投票功能，用户可对候选选题点赞，得票高的选题优先进入制作排期。</p>
+          </div>
+        </div>
+        <div class="sj-update-item">
+          <div class="sj-update-date">2026-11-06</div>
+          <div>
+            <h3>官方内容生态合作计划启动报名</h3>
+            <p>面向电脑知识类创作者开放合作报名，入选者可获得选题支持与联合发布资源。</p>
+          </div>
+        </div>
+        <div class="sj-update-item">
+          <div class="sj-update-date">2026-10-28</div>
+          <div>
+            <h3>《网址怎么看》系列完结，累计播放破百万</h3>
+            <p>该系列共 4 集，围绕网址结构与来源判断展开，社区反馈积极，已列入推荐榜。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sj-sec-head" style="margin-top:52px">
+        <div class="sj-sec-kicker">Partners / 合作伙伴</div>
+        <h2>与<em>行业伙伴</em>共同建设内容生态</h2>
+      </div>
+      <div class="sj-partner-grid">
+        <div class="sj-partner">
+          <div class="sj-partner-mark" style="background:#5eead4;color:#04211d;">安</div>
+          <b>安盾网络安全</b>
+          <span>安全知识联审</span>
+        </div>
+        <div class="sj-partner">
+          <div class="sj-partner-mark" style="background:#7c9cff;color:#0b1220;">极</div>
+          <b>极客学院</b>
+          <span>课程内容合作</span>
+        </div>
+        <div class="sj-partner">
+          <div class="sj-partner-mark" style="background:#ffc46b;color:#0b1220;">书</div>
+          <b>书签工坊</b>
+          <span>工具联合推广</span>
+        </div>
+        <div class="sj-partner">
+          <div class="sj-partner-mark" style="background:#9be38a;color:#0b1220;">云</div>
+          <b>云览科技</b>
+          <span>技术评测支持</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="sj-section" id="sj-faq">
+    <div class="sj-wrap">
+      <div class="sj-sec-head">
+        <div class="sj-sec-kicker">Help / 帮助中心</div>
+        <h2>关于<em>电脑上网</em>的常见问题</h2>
+        <p>以下问题来自社区提问，由编辑团队整理答复，持续更新。</p>
+      </div>
+      <div class="sj-faq-list">
+        <details class="sj-faq-item">
+          <summary>在电脑上打开陌生网站前，应该先确认哪些信息？</summary>
+          <div class="sj-faq-body">建议确认三点：地址栏中的域名是否与对方告知的一致；页面是否使用安全的连接方式；站点是否有明确的主体信息与联系方式。三项中若有一项明显异常，建议先不输入任何个人信息。</div>
+        </details>
+        <details class="sj-faq-item">
+          <summary>浏览器提示“此网站不安全”，还能继续访问吗？</summary>
+          <div class="sj-faq-body">不建议在提示状态下填写账号密码或支付信息。可以先检查系统时间是否正确，再尝试刷新；如果提示持续存在，说明该站点的安全配置存在缺失，稳妥的做法是停止访问并联系站点方核实。</div>
+        </details>
+        <details class="sj-faq-item">
+          <summary>标签页越开越多，电脑变卡怎么办？</summary>
+          <div class="sj-faq-body">先关闭长期未用的标签，再把经常访问的页面固定到标签栏。多数浏览器支持标签分组，可以按工作、学习、娱乐分开。另外可开启内存节省功能，或减少同时启用的扩展数量。</div>
+        </details>
+        <details class="sj-faq-item">
+          <summary>浏览器下载的文件应该怎样检查？</summary>
+          <div class="sj-faq-body">先确认文件来源与扩展名是否匹配，警惕伪装成文档的可执行文件。下载后可使用系统自带的安全检测或在线多引擎检测服务扫描。来源不明的压缩包解压前先查看内容清单。</div>
+        </details>
+        <details class="sj-faq-item">
+          <summary>扩展插件装多少合适？</summary>
+          <div class="sj-faq-body">建议只保留真正高频使用的扩展，并定期检查其权限范围。功能重叠的插件可以合并到一个，长期不用的直接卸载。权限要求与功能不匹配的扩展要谨慎安装。</div>
+        </details>
+        <details class="sj-faq-item">
+          <summary>如何向视界指南投稿选题？</summary>
+          <div class="sj-faq-body">可以通过页面上的投稿入口提交选题或作品链接，编辑团队会在三个工作日内回复。选题通过后，我们会与作者沟通内容方向与发布排期，原创内容优先进入制作计划。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 投稿入口 ===== -->
+  <section class="sj-section sj-section--alt" id="sj-author-join">
+    <div class="sj-wrap">
+      <div class="sj-join">
+        <div>
+          <h2>把你的<em>上网经验</em>分享给更多人</h2>
+          <p>视界指南官方网站长期开放投稿与创作者合作。无论你是程序员、教师、设计师还是普通用户，只要你有真实可用的电脑使用经验，都欢迎加入内容社区，与我们一起把专业、正版、高品质的内容带给更多用户。</p>
+          <div class="sj-join-actions">
+            <button class="sj-btn sj-btn-primary" id="sjOpenSubmit">✦ 立即投稿</button>
+            <button class="sj-btn sj-btn-ghost" id="sjOpenContact">✉ 联系我们</button>
+          </div>
+        </div>
+        <div class="sj-join-side">
+          <div><b>投稿邮箱</b>editor@shijie-guide.example</div>
+          <div><b>合作咨询</b>工作日 9:30–18:30 在线响应</div>
+          <div><b>审稿周期</b>三个工作日内反馈</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sj-footer">
+  <div class="sj-wrap">
+    <div class="sj-footer-grid">
+      <div>
+        <div class="sj-footer-logo">
+          <span class="sj-logo-mark">视</span>
+          <span>视界指南</span>
+        </div>
+        <p>视界指南官方网站，专注电脑上网技巧与安全浏览知识的视频内容平台。我们以原创、高清、专业的教程持续运营，服务企业与个人用户，深耕垂直领域，努力成为用户首选的知识伙伴。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#sj-focus">焦点内容</a></li>
+          <li><a href="#sj-videos">视频社区</a></li>
+          <li><a href="#sj-topics">专题企划</a></li>
+          <li><a href="#sj-analysis">关键词解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#sj-authors">创作者矩阵</a></li>
+          <li><a href="#sj-updates">企业动态</a></li>
+          <li><a href="#sj-comments">社区口碑</a></li>
+          <li><a href="#sj-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与共建</h4>
+        <ul>
+          <li><a href="#sj-author-join" id="sjFooterSubmit">投稿入口</a></li>
+          <li><a href="#sj-author-join" id="sjFooterContact">联系合作</a></li>
+          <li><a href="#sj-faq">常见问题</a></li>
+          <li><a href="#sj-topics">内容生态计划</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sj-footer-bottom">
+      <span>© 2026 视界指南官方网站 版权所有 · 持续运营中</span>
+      <span>本页面内容为原创与正版授权内容 · 更新于 2026年11月22日</span>
+    </div>
+  </div>
+</footer>
+
+<button class="sj-totop" id="sjToTop" aria-label="回到顶部">↑</button>
+<div class="sj-toast" id="sjToast" role="status" aria-live="polite"></div>
+
+<!-- 作者简介弹窗 -->
+<div class="sj-modal" id="sjAuthorModal" role="dialog" aria-modal="true" aria-labelledby="sjAuthorModalTitle">
+  <div class="sj-modal-box">
+    <button class="sj-modal-close" data-close="sjAuthorModal" aria-label="关闭">×</button>
+    <h3 id="sjAuthorModalTitle">创作者简介</h3>
+    <p id="sjAuthorModalBody"></p>
+    <button class="sj-btn sj-btn-ghost" data-close="sjAuthorModal">关闭</button>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="sj-modal" id="sjSubmitModal" role="dialog" aria-modal="true" aria-labelledby="sjSubmitModalTitle">
+  <div class="sj-modal-box">
+    <button class="sj-modal-close" data-close="sjSubmitModal" aria-label="关闭">×</button>
+    <h3 id="sjSubmitModalTitle">投稿入口</h3>
+    <p>提交你的选题或作品链接，编辑团队会在三个工作日内回复。</p>
+    <div class="sj-field">
+      <label for="sjSubmitName">你的昵称</label>
+      <input id="sjSubmitName" type="text" placeholder="例如：林舟">
+    </div>
+    <div class="sj-field">
+      <label for="sjSubmitIdea">选题或内容说明</label>
+      <textarea id="sjSubmitIdea" rows="3" placeholder="简单描述你想分享的电脑上网经验"></textarea>
+    </div>
+    <button class="sj-btn sj-btn-primary" id="sjSubmitSend">提交投稿</button>
+  </div>
+</div>
+
+<!-- 联系弹窗 -->
+<div class="sj-modal" id="sjContactModal" role="dialog" aria-modal="true" aria-labelledby="sjContactModalTitle">
+  <div class="sj-modal-box">
+    <button class="sj-modal-close" data-close="sjContactModal" aria-label="关闭">×</button>
+    <h3 id="sjContactModalTitle">联系我们</h3>
+    <p>企业合作、内容授权与社区事务，欢迎通过以下方式联系。</p>
+    <div class="sj-field">
+      <label for="sjContactMail">邮箱</label>
+      <input id="sjContactMail" type="text" value="editor@shijie-guide.example" readonly>
+    </div>
+    <div class="sj-field">
+      <label for="sjContactNote">留言</label>
+      <textarea id="sjContactNote" rows="3" placeholder="写下你需要咨询的问题"></textarea>
+    </div>
+    <button class="sj-btn sj-btn-primary" id="sjContactSend">发送留言</button>
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="sj-modal" id="sjShareModal" role="dialog" aria-modal="true" aria-labelledby="sjShareModalTitle">
+  <div class="sj-modal-box">
+    <button class="sj-modal-close" data-close="sjShareModal" aria-label="关闭">×</button>
+    <h3 id="sjShareModalTitle">分享内容</h3>
+    <p id="sjShareText">把这条内容分享给朋友，一起学习电脑上网技巧。</p>
+    <div class="sj-share-row">
+      <button class="sj-btn sj-btn-ghost" data-share="微信">微信</button>
+      <button class="sj-btn sj-btn-ghost" data-share="微博">微博</button>
+      <button class="sj-btn sj-btn-ghost" data-share="QQ">QQ</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toastEl = document.getElementById("sjToast");
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("is-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove("is-show");
+    }, 2000);
+  }
+
+  /* ===== 移动端导航 ===== */
+  var burger = document.getElementById("sjBurger");
+  var nav = document.getElementById("sjNav");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      nav.classList.remove("is-open");
+      burger.setAttribute("aria-expanded","false");
+      var links = nav.querySelectorAll("a");
+      for(var i=0;i<links.length;i++){ links[i].classList.remove("is-active"); }
+      e.target.classList.add("is-active");
+    }
+  });
+
+  /* ===== 搜索反馈 ===== */
+  var searchInput = document.getElementById("sjSearchInput");
+  var searchBtn = document.getElementById("sjSearchBtn");
+  var searchFeedback = document.getElementById("sjSearchFeedback");
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFeedback.textContent = "请输入关键词后再搜索，例如：浏览器、网址、安全设置。";
+      searchFeedback.classList.add("is-show");
+      return;
+    }
+    var hits = 0;
+    var cards = document.querySelectorAll("[data-search]");
+    for(var i=0;i<cards.length;i++){
+      var key = cards[i].getAttribute("data-search");
+      var match = key.indexOf(q) > -1;
+      cards[i].style.display = match ? "" : "none";
+      if(match) hits++;
+    }
+    if(hits > 0){
+      searchFeedback.textContent = "已为你筛选出 " + hits + " 条与「" + q + "」相关的内容，向下滚动查看。";
+    }else{
+      searchFeedback.textContent = "暂时没有与「" + q + "」匹配的内容，可以试试“安全”“浏览器”“标签”。";
+      for(var j=0;j<cards.length;j++){ cards[j].style.display = ""; }
+    }
+    searchFeedback.classList.add("is-show");
+  }
+  searchBtn.addEventListener("click", doSearch);
+  searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){ e.preventDefault(); doSearch(); }
+  });
+  searchInput.addEventListener("input", function(){
+    if(searchInput.value.trim() === ""){
+      searchFeedback.classList.remove("is-show");
+      var cards = document.querySelectorAll("[data-search]");
+      for(var i=0;i<cards.length;i++){ cards[i].style.display = ""; }
+    }
+  });
+
+  /* ===== 点赞 / 收藏 ===== */
+  function bindActions(){
+    var likes = document.querySelectorAll(".sj-like");
+    for(var i=0;i<likes.length;i++){
+      (function(btn){
+        btn.addEventListener("click", function(){
+          var b = btn.querySelector("b");
+          var base = parseInt(btn.getAttribute("data-count"),10) || 0;
+          var on = btn.classList.toggle("is-on");
+          b.textContent = on ? base + 1 : base;
+          toast(on ? "已点赞，感谢支持" : "已取消点赞");
+        });
+      })(likes[i]);
+    }
+    var favs = document.querySelectorAll(".sj-fav");
+    for(var k=0;k<favs.length;k++){
+      (function(btn){
+        btn.addEventListener("click", function(){
+          var on = btn.classList.toggle("is-on");
+          btn.textContent = on ? "★ 已收藏" : "☆ 收藏";
+          toast(on ? "已加入收藏，可在个人中心查看" : "已取消收藏");
+        });
+      })(favs[k]);
+    }
+    var copies = document.querySelectorAll(".sj-copy");
+    for(var m=0;m<copies.length;m++){
+      (function(btn){
+        btn.addEventListener("click", function(){
+          var title = btn.getAttribute("data-title") || "视界指南内容";
+          var linkText = "【视界指南】" + title;
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(linkText).then(function(){
+              toast("链接已复制到剪贴板");
+            }).catch(function(){
+              showShare(title);
+            });
+          }else{
+            showShare(title);
+          }
+        });
+      })(copies[m]);
+    }
+  }
+  bindActions();
+
+  /* ===== 分享弹窗 ===== */
+  var shareModal = document.getElementById("sjShareModal");
+  var shareText = document.getElementById("sjShareText");
+  function showShare(title){
+    shareText.textContent = "把《" + title + "》分享给朋友，一起学习电脑上网技巧。";
+    shareModal.classList.add("is-show");
+  }
+  var shareBtns = document.querySelectorAll("[data-share]");
+  for(var s=0;s<shareBtns.length;s++){
+    (function(btn){
+      btn.addEventListener("click", function(){
+        toast("已生成" + btn.getAttribute("data-share") + "分享提示");
+        shareModal.classList.remove("is-show");
+      });
+    })(shareBtns[s]);
+  }
+
+  /* ===== 作者弹窗 ===== */
+  var authorModal = document.getElementById("sjAuthorModal");
+  var authorBody = document.getElementById("sjAuthorModalBody");
+  var authorDetail = {
+    "林舟":"林舟，浏览器基础与入门教学方向创作者，累计发布 186 部原创教程，粉丝 12.4 万。擅长把复杂操作拆解为步骤，代表系列《第一次用电脑上网》，适合零基础用户系统学习。",
+    "苏禾":"苏禾，网络安全与实用技巧方向创作者，累计发布 142 部作品，粉丝 9.8 万。前企业信息安全顾问，作品以真实案例和清单式讲解见长，代表系列《网址怎么看》。",
+    "陈默":"陈默，隐私设置与深度测评方向创作者，累计发布 98 部作品，粉丝 7.6 万。坚持可复现的测试步骤与有边界的结论，代表专题《电脑浏览器安全设置全攻略》。",
+    "赵野":"赵野，开发工具与问题排查方向创作者，累计发布 76 部作品，粉丝 5.2 万。擅长用开发者工具定位真实故障，代表作品《网站打不开或很慢？用开发者工具定位原因》。"
+  };
+  var authorBtns = document.querySelectorAll(".sj-author-modal");
+  for(var a=0;a<authorBtns.length;a++){
+    (function(btn){
+      btn.addEventListener("click", function(){
+        var name = btn.getAttribute("data-author");
+        authorBody.textContent = authorDetail[name] || "该创作者的简介正在完善中。";
+        authorModal.classList.add("is-show");
+      });
+    })(authorBtns[a]);
+  }
+
+  /* ===== 弹窗关闭 ===== */
+  var closers = document.querySelectorAll("[data-close]");
+  for(var c=0;c<closers.length;c++){
+    (function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-close");
+        var el = document.getElementById(id);
+        if(el){ el.classList.remove("is-show"); }
+      });
+    })(closers[c]);
+  }
+  var modals = document.querySelectorAll(".sj-modal");
+  for(var d=0;d<modals.length;d++){
+    (function(md){
+      md.addEventListener("click", function(e){
+        if(e.target === md){ md.classList.remove("is-show"); }
+      });
+    })(modals[d]);
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      var modals = document.querySelectorAll(".sj-modal.is-show");
+      for(var i=0;i<modals.length;i++){ modals[i].classList.remove("is-show"); }
+    }
+  });
+
+  /* ===== 投稿与联系 ===== */
+  var submitModal = document.getElementById("sjSubmitModal");
+  var contactModal = document.getElementById("sjContactModal");
+  function openSubmit(){
+    submitModal.classList.add("is-show");
+    var nameEl = document.getElementById("sjSubmitName");
+    if(nameEl){ nameEl.focus(); }
+  }
+  document.getElementById("sjOpenSubmit").addEventListener("click", openSubmit);
+  document.getElementById("sjJoinBtnHero").addEventListener("click", function(e){ e.preventDefault(); openSubmit(); });
+  document.getElementById("sjFooterSubmit").addEventListener("click", function(e){ e.preventDefault(); openSubmit(); });
+
+  function openContact(){
+    contactModal.classList.add("is-show");
+  }
+  document.getElementById("sjOpenContact").addEventListener("click", openContact);
+  document.getElementById("sjFooterContact").addEventListener("click", function(e){ e.preventDefault(); openContact(); });
+
+  document.getElementById("sjSubmitSend").addEventListener("click", function(){
+    var name = document.getElementById("sjSubmitName").value.trim();
+    var idea = document.getElementById("sjSubmitIdea").value.trim();
+    if(!name || !idea){
+      toast("请填写昵称与内容说明");
+      return;
+    }
+    submitModal.classList.remove("is-show");
+    document.getElementById("sjSubmitName").value = "";
+    document.getElementById("sjSubmitIdea").value = "";
+    toast("投稿已提交，三个工作日内回复");
+  });
+
+  document.getElementById("sjContactSend").addEventListener("click", function(){
+    var note = document.getElementById("sjContactNote").value.trim();
+    if(!note){
+      toast("请先填写留言内容");
+      return;
+    }
+    contactModal.classList.remove("is-show");
+    document.getElementById("sjContactNote").value = "";
+    toast("留言已发送，感谢你的反馈");
+  });
+
+  /* ===== 回到顶部 ===== */
+  var toTop = document.getElementById("sjToTop");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 600){
+      toTop.classList.add("is-show");
+    }else{
+      toTop.classList.remove("is-show");
+    }
+  }, {passive:true});
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* ===== 数字滚动 ===== */
+  var counted = false;
+  function runCount(){
+    if(counted) return;
+    var stats = document.querySelectorAll(".sj-stat-num");
+    var triggered = false;
+    for(var i=0;i<stats.length;i++){
+      var rect = stats[i].getBoundingClientRect();
+      if(rect.top < window.innerHeight && rect.bottom > 0){
+        triggered = true;
+        break;
+      }
+    }
+    if(!triggered) return;
+    counted = true;
+    for(var j=0;j<stats.length;j++){
+      (function(el){
+        var target = parseInt(el.getAttribute("data-count"),10) || 0;
+        var suffix = el.textContent.replace(/[0-9]/g,"");
+        var start = null;
+        var duration = 1100;
+        function step(ts){
+          if(!start) start = ts;
+          var p = Math.min((ts - start)/duration, 1);
+          var val = Math.floor(target * (1 - Math.pow(1 - p, 3)));
+          el.textContent = val + suffix;
+          if(p < 1){ requestAnimationFrame(step); }
+        }
+        el.textContent = "0" + suffix;
+        requestAnimationFrame(step);
+      })(stats[j]);
+    }
+  }
+  window.addEventListener("scroll", runCount, {passive:true});
+  window.addEventListener("load", runCount);
+  runCount();
+})();
+</script>
+</body>
+                </html>
